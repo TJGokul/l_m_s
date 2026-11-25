@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController @RequestMapping("/api/books")
-@CrossOrigin(origins={"http://localhost:5173","http://127.0.0.1:5173"})
+@CrossOrigin(origins="*")
 public class BookController {
     private final BookService service; public BookController(BookService s){service=s;}
     @GetMapping public List<Book> all(@RequestParam(required=false) String search){return service.all(search);}

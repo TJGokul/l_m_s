@@ -3,7 +3,7 @@ import com.example.library_management_system.repository.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 @RestController @RequestMapping("/api/dashboard")
-@CrossOrigin(origins={"http://localhost:5173","http://127.0.0.1:5173"})
+@CrossOrigin(origins="*")
 public class DashboardController {
     private final BookRepository books; private final MemberRepository members; private final BorrowRecordRepository records;
     public DashboardController(BookRepository b,MemberRepository m,BorrowRecordRepository r){books=b;members=m;records=r;}

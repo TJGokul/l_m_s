@@ -4,7 +4,7 @@ import com.example.library_management_system.service.BorrowService;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 @RestController @RequestMapping("/api/borrow")
-@CrossOrigin(origins={"http://localhost:5173","http://127.0.0.1:5173"})
+@CrossOrigin(origins="*")
 public class BorrowController {
     private final BorrowService service; public BorrowController(BorrowService s){service=s;}
     @GetMapping public List<BorrowRecord> all(){return service.all();}

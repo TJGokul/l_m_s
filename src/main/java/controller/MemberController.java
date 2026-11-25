@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController @RequestMapping("/api/members")
-@CrossOrigin(origins={"http://localhost:5173","http://127.0.0.1:5173"})
+@CrossOrigin(origins="*")
 public class MemberController {
     private final MemberService service; public MemberController(MemberService s){service=s;}
     @GetMapping public List<Member> all(@RequestParam(required=false) String search){return service.all(search);}
